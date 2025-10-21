@@ -1,10 +1,9 @@
 ﻿using System.Linq.Expressions;
-using LitleIdentity.Data;
 using LitleIdentity.Data.Context;
 using LittleIdentity.Abstractions.Interfaces.IdentityUsers.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace LitleIdentity.Repositories.IdentityUser;
+namespace LitleIdentity.IdentityUser.Repositories;
 
 public class RepositoryUser<TUser>: IRepositoryUser<TUser> 
     where TUser : LittleIdentity.Abstractions.Entities.IdentityUser

@@ -1,6 +1,6 @@
 ﻿using LittleIdentity.Abstractions.Exceptions;
 
-namespace LittleIdentity.Abstractions.Entities;
+namespace LittleIdentity.Abstractions.ObjectValue;
 
 public class IdentityRole
 {

@@ -8,7 +8,7 @@ public abstract class LittleIdentityDbContext<TUser> : DbContext
     where TUser : LittleIdentity.Abstractions.Entities.IdentityUser 
 {
     public DbSet<TUser> Users { get; set; }
-    public DbSet<IdentityRole>Roles { get; set; }
+    public DbSet<LittleIdentity.Abstractions.ObjectValue.IdentityRole>Roles { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

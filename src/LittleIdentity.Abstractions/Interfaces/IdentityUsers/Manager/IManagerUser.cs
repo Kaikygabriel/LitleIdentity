@@ -10,6 +10,6 @@ public interface IManagerUser<TUser> where TUser : IdentityUser
     Task<bool>UpdateUserAsync(TUser user, IEnumerable<string> roles);
     Task<bool>DeleteUserAsync(TUser user, IEnumerable<string> roles);
 
-    Task AddRoleInUser(int userId, string roleName);
+    Task<bool> AddRoleInUser(int userId, string roleName);
     Task<bool> ValidatePasswordAsync(TUser user, string password);
 }

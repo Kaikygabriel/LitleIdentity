@@ -26,5 +26,7 @@ public class IdentityUserMapping:
             .HasConversion(x=>x.Address,x=>new Email(x))
             .HasColumnName("Email")
             .IsRequired();
+
+        builder.OwnsMany(x => x.Roles);
     }
 }
