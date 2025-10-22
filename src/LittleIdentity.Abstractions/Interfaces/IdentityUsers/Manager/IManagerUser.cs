@@ -2,7 +2,7 @@
 
 namespace LittleIdentity.Abstractions.Interfaces.IdentityUsers.Manager;
 
-public interface IManagerUser<TUser> where TUser : IdentityUser
+public interface IManagerUser<TUser> where TUser : Entities.IdentityUser
 {
     Task<TUser?> FindByNameAsync(string userName);
     Task<TUser?> FindByEmailAsync(string email);

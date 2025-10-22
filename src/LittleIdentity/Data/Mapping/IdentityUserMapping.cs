@@ -27,6 +27,9 @@ public class IdentityUserMapping:
             .HasColumnName("Email")
             .IsRequired();
 
-        builder.OwnsMany(x => x.Roles);
+        builder.OwnsMany(x => x.Roles,x=>
+            x.Property(x=>x.Title)
+                .HasColumnName("RoleName")
+                .HasColumnType("nvarchar(120)"));
     }
 }

@@ -64,7 +64,7 @@ public class UserManage<TUser> : IManagerUser<TUser>
     {
         try
         {
-            if(await _repositoryUser.GetByPredicate(x=>x.Id == user.Id) is null)
+            if(await FindByNameAsync(user.Name) is null)
                 return false;
             await _repositoryUser.Update(user);
             return true;
@@ -79,7 +79,7 @@ public class UserManage<TUser> : IManagerUser<TUser>
     {
         try
         {
-            if(await _repositoryUser.GetByPredicate(x=>x.Id == user.Id) is null)
+            if(await FindByNameAsync(user.Name) is null)
                 return false;
             await _repositoryUser.Delete(user);
             return true;
@@ -99,7 +99,8 @@ public class UserManage<TUser> : IManagerUser<TUser>
         
             if(user is null || role is null)
                 return false;
-            user.Roles.Add(role);
+            
+            user.SetRole(role);
             await _repositoryUser.Update(user);
             
             return true;

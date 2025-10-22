@@ -3,7 +3,7 @@ using LittleIdentity.Abstractions.Entities;
 
 namespace LittleIdentity.Abstractions.Interfaces.IdentityUsers.Repositories;
 
-public interface IRepositoryUser<TUser> where TUser : IdentityUser
+public interface IRepositoryUser<TUser> where TUser : IIdentityUser
 {
     Task<IEnumerable<TUser>> GetAllAsync();
     Task<TUser> GetByPredicate(Expression<Func<TUser, bool>> predicate);

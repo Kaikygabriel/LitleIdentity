@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using LittleIdentity.Abstractions.Exceptions;
+using LittleIdentity.Abstractions.Interfaces;
 using LittleIdentity.Abstractions.ObjectValue;
 
 namespace LittleIdentity.Abstractions.Entities;
 
-public class IdentityUser
+public class IdentityUser : IIdentityUser
 {
     public IdentityUser(string name, string password, Email email)
     {
