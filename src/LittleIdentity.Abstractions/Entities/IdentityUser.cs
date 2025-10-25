@@ -7,6 +7,10 @@ namespace LittleIdentity.Abstractions.Entities;
 
 public class IdentityUser : IIdentityUser
 {
+    public IdentityUser()
+    {
+        
+    }
     public IdentityUser(string name, string password, Email email)
     {
         if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(password))

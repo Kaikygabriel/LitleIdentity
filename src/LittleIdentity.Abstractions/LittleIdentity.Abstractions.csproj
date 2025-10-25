@@ -4,6 +4,19 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+      <License>MIT</License>
+      <Version>1.0.0</Version>
+      <AssemblyTitle>LitleIdentity.Abstractions</AssemblyTitle>
+      <Description>Library to facilitate authentication and authorization in your project, in a simple and performant way.</Description>
+      <PackageLicenseExpression>MIT</PackageLicenseExpression>
+      <Authors>Kaiky Gabriel Alves</Authors>
+      <Company>kaiky</Company>
+      <PackageProjectUrl>https://github.com/Kaikygabriel/LitleIdentity</PackageProjectUrl>
+      <PackageTags>LitleIdentity.Abstractions</PackageTags>
+      
   </PropertyGroup>
 
+    <ItemGroup>
+        <EmbeddedResource Include="..\..\Media\LogoLittleIdentity.png" />
+    </ItemGroup>
 </Project>
