@@ -10,6 +10,15 @@ namespace LitleIdentity.Data.Context;
 public abstract class LittleIdentityDbContext<TUser> : DbContext
     where TUser : LittleIdentity.Abstractions.Entities.IdentityUser 
 {
+    public LittleIdentityDbContext()
+    {
+        
+    }
+
+    public LittleIdentityDbContext(DbContextOptions<LittleIdentityDbContext<TUser>>options ): base(options)
+    {
+        
+    }
     public DbSet<TUser> Users { get; set; }
     public DbSet<LittleIdentity.Abstractions.ObjectValue.IdentityRole>Roles { get; set; }
 
