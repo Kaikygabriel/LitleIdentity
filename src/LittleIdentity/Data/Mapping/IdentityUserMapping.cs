@@ -16,15 +16,18 @@ public class IdentityUserMapping:
 
         builder.Property(x => x.Name)
             .HasMaxLength(120)
+            .HasColumnType("nvarchar(120)")
             .IsRequired();
         
         builder.Property(x => x.Password)
             .HasMaxLength(170)
+            .HasColumnType("nvarchar(170)")
             .IsRequired();
         
         builder.Property(x => x.Email)
             .HasConversion(x=>x.Address,x=>new Email(x))
             .HasColumnName("Email")
+            .HasColumnType("nvarchar(190)")
             .IsRequired();
 
         builder.OwnsMany(x => x.Roles,x=>
