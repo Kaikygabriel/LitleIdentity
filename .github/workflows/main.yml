@@ -1,0 +1,27 @@
+name: Build and deploy package
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-And-Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 9.0.x
+      - name: Install dependencies
+        run: dotnet restore src/LittleIdentity/LittleIdentity.csproj
+      - name: Build
+        run: dotnet build --no-restore src/LittleIdentity/LittleIdentity.csproj -c Release
+      - name: Test
+        run: dotnet test --no-build --verbosity normal src/LittleIdentity.Tests/LittleIdentity.Tests.csproj -c Release
+      - name: Pack
+        run: dotnet pack src/LittleIdentity/LittleIdentity.csproj -c Release -o ./nupkg
+      - name: Publish Package
+        uses: nuget/setup-nuget@v1.0.5
+      - name: Push to NuGet.org
+        run: dotnet nuget push .\bin\release\LittleIdentity.1.0.x.nupkg -k ${{ secrets.SECRETKEY }} -s https://api.nuget.org/v3/index.json
