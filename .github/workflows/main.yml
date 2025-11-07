@@ -27,4 +27,4 @@ jobs:
         run: dotnet pack src/LittleIdentity/LittleIdentity.csproj -c Release -o ./nupkg
 
       - name: Push to NuGet.org
-        run: dotnet nuget push "./nupkg/*.nupkg" -k ${{ secrets.SECRETKEY }} -s https://api.nuget.org/v3/index.json
+        run: dotnet nuget push "./src/LittleIdentity/bin/release/net9.0/*.nupkg" -k ${{ secrets.SECRETKEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
