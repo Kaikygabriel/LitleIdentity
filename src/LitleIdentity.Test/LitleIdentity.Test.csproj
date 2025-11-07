@@ -20,7 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LittleIdentity.Abstractions\LittleIdentity.Abstractions.csproj" />
     <ProjectReference Include="..\src\LittleIdentity\LittleIdentity.csproj" />
+    <ProjectReference Include="..\LittleIdentity\LittleIdentity.csproj" />
   </ItemGroup>
 
 </Project>
